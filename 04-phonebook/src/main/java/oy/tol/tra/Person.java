@@ -50,6 +50,7 @@ public class Person implements Comparable<Person> {
             return this.getFullName().equals(((Person)other).getFullName());
         }
         return false;
+
     }
 
     /**

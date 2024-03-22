@@ -112,6 +112,7 @@ public class KeyValueHashTable<K extends Comparable<K>, V> implements Dictionary
     @SuppressWarnings("unchecked")
     private void reallocate(int newSize) throws OutOfMemoryError {
         if (newSize < DEFAULT_CAPACITY) {
+
             newSize = DEFAULT_CAPACITY;
         }
         reallocationCount++;
