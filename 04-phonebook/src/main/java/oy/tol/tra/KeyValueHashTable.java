@@ -82,7 +82,7 @@ public class KeyValueHashTable<K extends Comparable<K>, V> implements Dictionary
         // if index was taken by different Person (collision), get new hash and index,
         // insert into table when the index has a null in it,
         // return true if existing Person updated or new Person inserted.
-        
+
         return false;
     }
 
@@ -91,7 +91,7 @@ public class KeyValueHashTable<K extends Comparable<K>, V> implements Dictionary
         // Remember to check for null.
 
         // Must use same method for computing index as add method
-        
+
         return null;
     }
 
@@ -101,17 +101,18 @@ public class KeyValueHashTable<K extends Comparable<K>, V> implements Dictionary
         Pair<K, V> [] sorted = (Pair<K,V>[])new Pair[count];
         int newIndex = 0;
         for (int index = 0; index < values.length; index++) {
-           if (values[index] != null) {
-              sorted[newIndex++] = new Pair<>(values[index].getKey(), values[index].getValue());
-           }
+            if (values[index] != null) {
+                sorted[newIndex++] = new Pair<>(values[index].getKey(), values[index].getValue());
+            }
         }
         Algorithms.fastSort(sorted);
         return sorted;
-      }
+    }
 
     @SuppressWarnings("unchecked")
     private void reallocate(int newSize) throws OutOfMemoryError {
         if (newSize < DEFAULT_CAPACITY) {
+
             newSize = DEFAULT_CAPACITY;
         }
         reallocationCount++;
@@ -130,9 +131,9 @@ public class KeyValueHashTable<K extends Comparable<K>, V> implements Dictionary
     @Override
     public void compress() throws OutOfMemoryError {
         int newCapacity = (int)(count * (1.0 / LOAD_FACTOR));
-		    if (newCapacity < values.length) {
-			      reallocate(newCapacity);
-		    } 
+        if (newCapacity < values.length) {
+            reallocate(newCapacity);
+        }
     }
- 
+
 }
