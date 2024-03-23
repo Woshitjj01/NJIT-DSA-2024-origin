@@ -41,7 +41,9 @@ public class Person implements Comparable<Person> {
     public int hashCode() {
         int hash = 5381;
         // Implement hash function here.
-        return hash;
+        hash=hash*31+firstName.hashCode();
+        hash=hash*31+lastName.hashCode();
+        return Math.abs(hash);
     }
 
     @Override
@@ -67,6 +69,7 @@ public class Person implements Comparable<Person> {
      */
     @Override
     public int compareTo(Person other) {
+
         return getFullName().compareTo(other.getFullName());
     }
 }
