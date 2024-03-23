@@ -2,8 +2,6 @@ package oy.tol.tra;
 
 public class KeyValueBSearchTree<K extends Comparable<K>, V> implements Dictionary<K, V> {
 
-    // This is the BST implementation, KeyValueHashTable has the hash table
-    // implementation
 
     private TreeNode<K, V> root;
     private int count = 0;

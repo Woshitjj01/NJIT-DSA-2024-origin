@@ -45,17 +45,7 @@ public class KeyValueHashTable<K extends Comparable<K>, V> implements Dictionary
         return count;
     }
 
-    /**
-     * Prints out the statistics of the hash table.
-     * Here you should print out member variable information which tell something
-     * about your implementation.
-     * <p>
-     * For example, if you implement this using a hash table, update member
-     * variables of the class (int counters) in add() whenever a collision
-     * happen. Then print this counter value here.
-     * You will then see if you have too many collisions. It will tell you that your
-     * hash function is not good.
-     */
+
     @Override
     public String getStatus() {
         StringBuilder builder = new StringBuilder();
