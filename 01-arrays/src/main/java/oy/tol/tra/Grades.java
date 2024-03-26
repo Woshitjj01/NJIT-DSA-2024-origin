@@ -6,71 +6,26 @@ package oy.tol.tra;
  */
 public class Grades {
 
-   
-   private Integer [] grades = null;
+   private Integer[] grades = null;
 
-   /**
-    * A constructor for building IntArrays.
-    * @param grades the plain Java integer array with numbers to add.
-    */
-   public Grades(Integer [] grades) {
-      this.grades = new Integer [grades.length];
+   public Grades(Integer[] grades) {
+      this.grades = new Integer[grades.length];
       for (int counter = 0; counter < grades.length; counter++) {
          this.grades[counter] = grades[counter];
       }
    }
 
-   /**
-    * The method to reverse the internal Java int array.
-    */
    public void reverse() {
-      /* TODO:
-       1. Edit the test data files to see if the reverse() really works or not.
-       2. Execute the IntArrayTests to see that some of them fail.
-       3. Study the code below and try to find what is the issue.
-       4. Use the debugger to see the execution and variable values if necessary.
-       5. Fix the issue.
-       6. Transform the algorithm to <strong>use</strong> the generic one from Algorithms.java, as instructed in the readme file.
-      */
-      int i = 0;
-      while (i <grades.length/2) {
-         int temp = grades[i];
-         grades[i] = grades[grades.length-i-1];
-         grades[grades.length-i-1] = temp;
-         i++;
-     }
+      // Reverse the internal Java Integer array using generic method from Algorithms class
+      Algorithms.reverse(this.grades);
    }
 
-   /**
-    * Sorts the array to ascending order.
-    */
    public void sort() {
-      /* TODO:
-       1. Edit the test data files to see if the sort() really works or not.
-       2. Execute the IntArrayTests to see that some of them fail.
-       3. Study the code below and try to find what is the issue.
-       4. Use the debugger to see the execution and variable values if necessary.
-       5. Fix the issue.
-       6. Transform the algorithm to <strong>use</strong> the generic one from Algorithms.java as instructed in the readme file.
-      */
-      for(int i=grades.length-1;i>0;i--) {
-         for (int k = 0; k < i; k++) {
-            if (grades[k+1] < grades[k]) {
-               int temp = grades[k + 1];
-               grades[k+1] = grades[k];
-               grades[k] = temp;
-            }
-
-         }
-      }
-
+      // Sort the internal Java Integer array in ascending order using generic method from Algorithms class
+      Algorithms.sort(this.grades);
    }
 
-   /**
-    * Returns the plain Java int [] array for investigation.
-    * @return The int array.
-    */
-   public Integer [] getArray() {
+   public Integer[] getArray() {
       return grades;
    }
 }
