@@ -37,14 +37,25 @@ public class Person implements Comparable<Person> {
      * 
      * @return Hash value of the person.
      */
+
     @Override
     public int hashCode() {
-        int hash = 5381;
-        // Implement hash function here.
-        hash=hash*31+firstName.hashCode();
-        hash=hash*31+lastName.hashCode();
-        return Math.abs(hash);
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((firstName == null) ? 0 : computeStringHashCode(firstName));
+        result = prime * result + ((lastName == null) ? 0 : computeStringHashCode(lastName));
+        return result;
     }
+
+    // 自定义字符串哈希计算方法
+    private int computeStringHashCode(String str) {
+        int hash = 0;
+        for (int i = 0; i < str.length(); i++) {
+            hash = 31 * hash + str.charAt(i);
+        }
+        return hash;
+    }
+
 
     @Override
     public boolean equals(Object other) {
