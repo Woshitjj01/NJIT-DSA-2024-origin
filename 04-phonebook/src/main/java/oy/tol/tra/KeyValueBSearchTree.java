@@ -49,12 +49,6 @@ public class KeyValueBSearchTree<K extends Comparable<K>, V> implements Dictiona
     @Override
     public boolean add(K key, V value) throws IllegalArgumentException, OutOfMemoryError {
         // TODO: Implement this
-        // Remember null check.
-        // If root is null, should go there.
-
-        // update the root node. But it may have children
-        // so do not just replace it with this new node but set
-        // the keys and values for the already existing root.
         if (key == null) {
             throw new IllegalArgumentException("Key cannot be null");
         }
@@ -76,7 +70,6 @@ public class KeyValueBSearchTree<K extends Comparable<K>, V> implements Dictiona
 
     @Override
     public V find(K key) throws IllegalArgumentException {
-        // TODO: Implement this. //Think about this
         if (key == null) {
             throw new IllegalArgumentException("Key cannot be null");
         }
@@ -86,7 +79,6 @@ public class KeyValueBSearchTree<K extends Comparable<K>, V> implements Dictiona
 
     @Override
     public void ensureCapacity(int size) throws OutOfMemoryError {
-        // Nothing to do here. Trees need no capacity.
     }
 
     @Override
@@ -100,8 +92,7 @@ public class KeyValueBSearchTree<K extends Comparable<K>, V> implements Dictiona
 
     @Override
     public void compress() throws OutOfMemoryError {
-        // Nothing to do here, since BST does not use extra space like array based
-        // structures.
+
     }
 
 }
